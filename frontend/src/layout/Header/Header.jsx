@@ -7,6 +7,7 @@ import Button from '../../components/Buttons/Button';
 const Header = () => {
     const menuLinks = [
         { text: "Home", to: "/" },
+        { text: "Blogs", to: "/blogs" },
         { text: "Contact", to: "/contact" },
         { text: "About", to: "/about" },
     ]

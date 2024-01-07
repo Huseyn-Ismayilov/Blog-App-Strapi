@@ -25,11 +25,37 @@ button {
 
 .productDetails .image {
     width: 100%;
+    position: relative;
+}
+.productDetails .image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: black;
+    opacity: .4;
 }
 .productDetails .image img {
     width: 100%;
     max-height: 60vh;
+    min-height: 400px;
     object-fit: cover;
+}
+.productDetails .image .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.productDetails .image .title h1 {
+    line-height: 1.2;
+    text-align: center;
+    width: fit-content;
+    font-size: 64px;
+    color: white;
 }
 .productDetails .details {
     text-align: left;
@@ -42,7 +68,7 @@ button {
     opacity: 0.6;
 }
 .navLink:hover {
-    opacity: .60;
+    opacity: 0.6;
 }
 .navLink.active {
     opacity: 1;

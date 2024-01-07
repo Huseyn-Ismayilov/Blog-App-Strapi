@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
-export default function Blogs() {
+export default function Home() {
     const { isLoading, error, data } = useFetch(
         "http://localhost:1337/api/blogs?populate=*"
     );
@@ -9,10 +9,12 @@ export default function Blogs() {
     if (isLoading) return <h1>Loading...</h1>;
     if (error) return <h1>Error: {error.message}</h1>;
 
+    console.log(data);
+
     return (
         <div className="container">
             <div>
-                <h1>Blogs</h1>
+                {/* <h1>{data.data[0].id}asd</h1> */}
                 <ul className="blogs">
 
                     {data.data.map(blog => (

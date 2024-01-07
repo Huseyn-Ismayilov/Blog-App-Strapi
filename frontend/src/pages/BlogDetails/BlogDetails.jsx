@@ -22,10 +22,14 @@ export default function BlogDetails() {
                     width="300"
                     alt=""
                 />
+                <div className="title">
+                    <div className="container">
+                        <h1>{data.data.attributes.title}</h1>
+                    </div>
+                </div>
             </div>
             <div className="container">
                 <div className="details">
-                    <h1>{data.data.attributes.title}</h1>
                     <p>{data.data.attributes.content}</p>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import {
 
 import './App.css'
 // Pages
+import Home from './pages/Home/Home'
 import Blogs from './pages/Blogs/Blogs'
 import BlogsDetails from './pages/BlogDetails/BlogDetails'
 import About from './pages/About/About'
@@ -19,11 +20,12 @@ function App() {
     return (
         <Router>
             <Header
-                // isMode={isMode}
-                // theme={theme}
+            // isMode={isMode}
+            // theme={theme}
             />
             <Routes>
-                <Route path='/' element={<Blogs />}></Route>
+                <Route path='/' element={<Home />}></Route>
+                <Route path='/blogs' element={<Blogs />}></Route>
                 <Route path='/blogs/:id' element={<BlogsDetails />}></Route>
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/contact' element={<Contact />}></Route>
