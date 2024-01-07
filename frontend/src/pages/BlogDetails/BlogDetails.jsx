@@ -1,0 +1,36 @@
+import { useParams } from "react-router-dom"
+import useFetch from "../../hooks/useFetch"
+
+export default function BlogDetails() {
+    const { id } = useParams()
+    const { isLoading, error, data } = useFetch(
+        "http://localhost:1337/api/blogs/" + id + "?populate=*")
+    if (isLoading) {
+        return (
+            <h1>Is Loading</h1>
+        )
+    } else if (error) {
+        return (
+            <h1>Error {error.message}</h1>
+        )
+    }
+    return (
+        <div className="productDetails">
+            <div className="image">
+                <img
+                    src={`http://localhost:1337${data.data.attributes.image.data[0].attributes.url}`}
+                    width="300"
+                    alt=""
+                />
+            </div>
+            <div className="container">
+                <div className="details">
+                    <h1>{data.data.attributes.title}</h1>
+                    <p>{data.data.attributes.content}</p>
+                </div>
+            </div>
+
+        </div>
+
+    )
+}
