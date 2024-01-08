@@ -6,11 +6,11 @@ import {
 
 import './App.css'
 // Pages
-import Home from './pages/Home/Home'
-import Blogs from './pages/Blogs/Blogs'
-import BlogsDetails from './pages/BlogDetails/BlogDetails'
-import About from './pages/About/About'
-import Contact from './pages/Contact/Contact'
+import Home from './pages/Home'
+import Blogs from './pages/Blogs'
+import BlogsDetails from './pages/BlogDetails'
+import About from './pages/About'
+import Contact from './pages/Contact'
 // Layout
 import Header from './layout/Header/Header'
 import Footer from './layout/Footer/Footer'

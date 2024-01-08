@@ -4,6 +4,7 @@
 }
 img {
     max-width: 100%;
+    display: block;
 }
 svg {
     display: block;
@@ -12,6 +13,9 @@ button {
     background-color: transparent;
     border: unset;
     cursor: pointer;
+}
+a {
+    color: currentColor;
 }
 .products {
     display: grid;
@@ -26,6 +30,7 @@ button {
 .productDetails .image {
     width: 100%;
     position: relative;
+    margin-bottom: 36px;
 }
 .productDetails .image::after {
     content: "";

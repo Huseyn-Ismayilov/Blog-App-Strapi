@@ -1,0 +1,20 @@
+.singleCart {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+.single_blog {
+    padding: 30px 0;
+}
+.singleCart > * {
+    width: 50%;
+}
+
+.singleCart img {
+    border-radius: 16px;
+}
+
+.singleCart .title {
+    font-size: 36px;
+    line-height: 1.3;
+}
