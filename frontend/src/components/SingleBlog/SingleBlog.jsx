@@ -18,7 +18,7 @@ export default function SingleBlog() {
          <section className={styles.single_blog}>
             <div className="container">
                <div key={selectedBlog.id} className={styles.singleCart}>
-                  <Link to={`/blogs/${selectedBlog.id}`} className={styles.image}>
+                  <Link to={`/blogs/${selectedBlog.attributes.Slug}`} className={styles.image}>
                      <img
                         src={`http://localhost:1337${selectedBlog.attributes.image.data[0].attributes.url}`}
                         alt=""

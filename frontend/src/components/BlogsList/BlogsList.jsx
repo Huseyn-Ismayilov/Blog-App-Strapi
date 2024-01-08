@@ -9,7 +9,7 @@ export default function BlogsList() {
    
    if (isLoading) return;
    if (error) return;
-
+   // console.log(data.data[0].attributes.Slug);
    return (
       <section className={styles.blogs_list}>
          <div className="container">
@@ -20,7 +20,7 @@ export default function BlogsList() {
                      className={styles.cart}
                   >
                      <Link
-                        to={`/blogs/${blog.id}`}
+                        to={`/blogs/${blog.attributes.Slug}`}
                      >
                         <div className={styles.cartImage}>
                            <img

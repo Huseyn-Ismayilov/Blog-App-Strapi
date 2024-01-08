@@ -11,6 +11,7 @@ import Blogs from './pages/Blogs'
 import BlogsDetails from './pages/BlogDetails'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Category from './pages/Category'
 // Layout
 import Header from './layout/Header/Header'
 import Footer from './layout/Footer/Footer'
@@ -19,14 +20,12 @@ function App() {
 
     return (
         <Router>
-            <Header
-            // isMode={isMode}
-            // theme={theme}
-            />
+            <Header/>
             <Routes>
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/blogs' element={<Blogs />}></Route>
-                <Route path='/blogs/:id' element={<BlogsDetails />}></Route>
+                <Route path='/blogs/:slug' element={<BlogsDetails />}></Route>
+                <Route path='/category/:slug' element={<Category />}></Route>
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/contact' element={<Contact />}></Route>
             </Routes>
