@@ -1,13 +1,17 @@
-import useFetch from "../hooks/useFetch";
 import BlogsList from "../components/BlogsList/BlogsList";
+import SectionTitle from "../components/SectionTitle/SectionTitle";
 
 export default function Blogs() {
    return (
       <>
-         <div className="container">
-            <h1>Blogs</h1>
-         </div>
-         <BlogsList />
+         <section className="blogs section_container">
+            <div className="container">
+               <SectionTitle
+                  h1="Blogs"
+               />
+               <BlogsList />
+            </div>
+         </section>
       </>
    );
 }

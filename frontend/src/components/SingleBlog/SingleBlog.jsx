@@ -25,7 +25,7 @@ export default function SingleBlog() {
                      className={styles.image}
                   >
                      <img
-                        src={`http://localhost:1337${selectedBlog.attributes.image.data[0].attributes.url}`}
+                        src={`http://localhost:1337${selectedBlog.attributes.image.data[0].attributes.formats.medium.url}`}
                         alt=""
                      />
                   </Link>

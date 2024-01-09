@@ -7,7 +7,7 @@ export default function ArticleCart(props) {
       <div
          className="ArticleCart"
          key={props.key}
-         >
+      >
          <Link
             to={props.link}
             className="image"
@@ -20,7 +20,6 @@ export default function ArticleCart(props) {
          <div className="details">
             <Link
                to={props.link}
-               className="image"
             >
                <h3 className="title">{props.title}</h3>
             </Link>

@@ -1,10 +1,10 @@
 .blogs_grid3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 36px 24px;
 }
 .blogs_grid4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 36px 24px;
 }

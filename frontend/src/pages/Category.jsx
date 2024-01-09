@@ -1,7 +1,12 @@
 import CategoryList from "../components/CategoryList/CategoryList";
+import SectionTitle from "../components/SectionTitle/SectionTitle";
 
 export default function Category() {
    return (
-      <CategoryList/>
+      <section className="category section_container">
+         <div className="container">
+            <CategoryList />
+         </div>
+      </section>
    )
 }

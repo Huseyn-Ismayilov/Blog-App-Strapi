@@ -14,9 +14,12 @@ export default function BlogsList(props) {
          <div className="container">
             <ul className={props.grid}>
                {data.data.map((blog, index) => (
-                  <li key={index} className="cart">
+                  <li
+                     key={index}
+                     className="cart"
+                  >
                      <ArticleCart
-                        image={`http://localhost:1337${blog.attributes.image.data[0].attributes.url}`}
+                        image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.medium.url}`}
                         title={blog.attributes.title}
 
                         link={`/${blog.attributes.Slug}`}
