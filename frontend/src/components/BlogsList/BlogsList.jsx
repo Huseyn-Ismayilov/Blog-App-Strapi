@@ -1,35 +1,26 @@
-import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import styles from './BlogsList.module.css'
+import './BlogsList.css'
+import ArticleCart from "../ArticleCart/ArticleCart";
 
-export default function BlogsList() {
+export default function BlogsList(props) {
    const { isLoading, error, data } = useFetch(
       "http://localhost:1337/api/blogs?populate=*"
    );
-   
+
    if (isLoading) return;
    if (error) return;
-   // console.log(data.data[0].attributes.Slug);
    return (
-      <section className={styles.blogs_list}>
+      <section className="blogs_list">
          <div className="container">
-            <ul className={styles.grid}>
-               {data.data.map(blog => (
-                  <li
-                     key={blog.id}
-                     className={styles.cart}
-                  >
-                     <Link
-                        to={`/blogs/${blog.attributes.Slug}`}
-                     >
-                        <div className={styles.cartImage}>
-                           <img
-                              src={`http://localhost:1337${blog.attributes.image.data[0].attributes.url}`}
-                              alt=""
-                           />
-                        </div>
-                        <h3 className={styles.cartTitle}>{blog.attributes.title}</h3>
-                     </Link>
+            <ul className={props.grid}>
+               {data.data.map((blog, index) => (
+                  <li key={index} className="cart">
+                     <ArticleCart
+                        image={`http://localhost:1337${blog.attributes.image.data[0].attributes.url}`}
+                        title={blog.attributes.title}
+
+                        link={`/${blog.attributes.Slug}`}
+                     />
                   </li>
                ))}
             </ul>
@@ -37,3 +28,6 @@ export default function BlogsList() {
       </section>
    )
 }
+BlogsList.defaultProps = {
+   grid: "blogs_grid4",
+};

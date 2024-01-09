@@ -6,12 +6,14 @@ export default function Home() {
    return (
       <>
          <SingleBlog />
-         <BlogsList />
-         <ul>
+         <BlogsList 
+            grid="blogs_grid3"
+         />
+         {/* <ul>
             <li>
                <Link to={`/category/react`}>React</Link>
             </li>
-         </ul>
+         </ul> */}
       </>
    );
 }

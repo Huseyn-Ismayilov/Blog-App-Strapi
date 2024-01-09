@@ -8,6 +8,7 @@ import './Header.css'
 const Header = () => {
     const menuLinks = [
         { text: "Home", to: "/" },
+        { text: "React", to: "/category/react" },
         { text: "Blogs", to: "/blogs" },
         { text: "Contact", to: "/contact" },
         { text: "About", to: "/about" },

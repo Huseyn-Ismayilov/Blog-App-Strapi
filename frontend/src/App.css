@@ -2,14 +2,14 @@
 
 html[data-theme="dark"] {
   --text-color: white;
-  --bg-color: #292929;
+  --bg-color: #1d1d1d;
   --border-color: #ffffff30;
 }
 
 html[data-theme="light"] {
   --text-color: #111111;
   --bg-color: white;
-  --border-color: #00000012;
+  --border-color: #00000014;
 }
 
 *,
@@ -105,9 +105,9 @@ button {
 }
 
 .btn {
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 12px;
-    border: 2px solid transparent;
+    border: 2.4px solid transparent;
     font-weight: 600;
     display: inline-block;
 }
@@ -119,7 +119,6 @@ button {
     background-color: rgba(0, 0, 0, 0.062);
 }
 .secondary_btn {
-    background-color: var(--bg-color);
     color: white;
 }
 .secondary_btn:hover {
@@ -129,3 +128,4 @@ button {
 .theme_switch {
     margin-left: 14px;
 }
+

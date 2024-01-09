@@ -17,15 +17,20 @@ export default function SingleBlog() {
       <>
          <section className={styles.single_blog}>
             <div className="container">
-               <div key={selectedBlog.id} className={styles.singleCart}>
-                  <Link to={`/blogs/${selectedBlog.attributes.Slug}`} className={styles.image}>
+               <div
+                  key={selectedBlog.id}
+                  className={styles.singleCart}>
+                  <Link
+                     to={`/${selectedBlog.attributes.Slug}`}
+                     className={styles.image}
+                  >
                      <img
                         src={`http://localhost:1337${selectedBlog.attributes.image.data[0].attributes.url}`}
                         alt=""
                      />
                   </Link>
                   <div className={styles.details}>
-                     <Link to={`/blogs/${selectedBlog.id}`}>
+                     <Link to={`/${selectedBlog.attributes.Slug}`}>
                         <h2 className={styles.title}>{selectedBlog.attributes.title}</h2>
                      </Link>
                   </div>

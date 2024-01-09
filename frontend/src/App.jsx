@@ -8,7 +8,7 @@ import './App.css'
 // Pages
 import Home from './pages/Home'
 import Blogs from './pages/Blogs'
-import BlogsDetails from './pages/BlogDetails'
+import BlogsDetails from './pages/BlogDetailsPage'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Category from './pages/Category'
@@ -24,7 +24,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/blogs' element={<Blogs />}></Route>
-                <Route path='/blogs/:slug' element={<BlogsDetails />}></Route>
+                <Route path='/:slug' element={<BlogsDetails />}></Route>
                 <Route path='/category/:slug' element={<Category />}></Route>
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/contact' element={<Contact />}></Route>

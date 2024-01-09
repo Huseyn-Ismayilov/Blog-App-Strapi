@@ -39,9 +39,15 @@
       "targetField": "title",
       "required": true
     },
-    "category": {
+    "users": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "blog"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "blogs"
     }

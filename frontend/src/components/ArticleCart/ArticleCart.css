@@ -1,0 +1,36 @@
+.ArticleCart {
+    transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.ArticleCart:hover {
+    transform: translateY(-4px);
+}
+.ArticleCart:hover .image img {
+    transform: scale(1.05);
+}
+.ArticleCart .image {
+    margin-bottom: 12px;
+    display: block;
+}
+.ArticleCart .image img {
+    width: 100%;
+    border-radius: 4px;
+}
+.ArticleCart .title {
+    font-size: 20px;
+    font-weight: 700;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ArticleCart .image {
+    overflow: hidden;
+    margin-bottom: 8px;
+    border-radius: 16px;
+}
+.ArticleCart .image img {
+    width: 100%;
+    transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+}

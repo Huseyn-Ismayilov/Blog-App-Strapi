@@ -11,7 +11,8 @@
 }
 
 .singleCart img {
-    border-radius: 16px;
+    width: 100%;
+    border-radius: 4px;
 }
 
 .singleCart .title {

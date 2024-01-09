@@ -1,0 +1,8 @@
+.blogs_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.blogs_grid .ArticleCart .title {
+    font-size: 17px;
+}
