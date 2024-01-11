@@ -1,4 +1,4 @@
-export default function Header(props) {
+export default function Logo(props) {
     return (
         <div className="logo">
             <svg width={props.width} viewBox="0 0 66 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7,4 +7,7 @@ export default function Header(props) {
             </svg>
         </div>
     )
+}
+Logo.defaultProps = {
+    width: "160"
 }

@@ -17,7 +17,7 @@
     z-index: 10;
     background: linear-gradient(90deg, #d9d9d9 0%, #f5de6a 0.01%, #b2749e 48.4%, #6a02d5 100%);
 }
-.navBar {
+.site_header .navBar {
     margin-left: auto;
     margin-right: 16px;
 }

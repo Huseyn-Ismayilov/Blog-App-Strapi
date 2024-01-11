@@ -1,29 +1,30 @@
-import { NavLink } from 'react-router-dom'
+import Logo from '../../components/Logo/Logo';
+import ThemeSwitch from '../../components/ThemeSwitch/themeSwitch';
+import NavBar from '../../components/NavBar/Navbar';
+import './Footer.css'
 
 export default function Footer() {
-    const menuLinks = [
-        { text: "Home", to: "/" },
-        { text: "Contact", to: "/contact" },
-        { text: "About", to: "/about" },
-    ]
     return (
-        <div className="siteFooter">
-            <div className="container">
-                <h1>Footer</h1>
-                <ul>
-                    {menuLinks.map((item, index) => (
-                        <li key={index}>
-                            <NavLink
-                                to={item.to}
-                                className="navLink"
-                            >
-                                {item.text}
-                            </NavLink>
-                        </li>
-                    ))}
-
-                </ul>
+        <div className="site_footer">
+            <div className="foot_main">
+                <div className="container">
+                    <div className="wrapper">
+                        <div className="left">
+                            <Logo />
+                        </div>
+                        <NavBar />
+                        <div className="right">
+                            <ThemeSwitch />
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div className="foot_bottom">
+                <div className="container">
+                    <p>© 2023 Blog App. All Rights Reserved</p>
+                </div>
+            </div>
+
         </div>
     )
 }

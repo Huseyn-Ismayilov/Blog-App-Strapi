@@ -1,9 +1,9 @@
 import { NavLink, Link } from 'react-router-dom'
 import React, { useState } from 'react';
-import Logo from './Logo/Logo';
+import Logo from '../../components/Logo/Logo';
 import Button from '../../components/Buttons/Button';
 import ThemeSwitch from '../../components/ThemeSwitch/themeSwitch';
-import NavBar from './NavBar/Navbar';
+import NavBar from '../../components/NavBar/Navbar';
 import './Header.css'
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
                 <div className="container">
                     <div className="wrapper">
                         <Link to="/">
-                            <Logo width="160" />
+                            <Logo />
                         </Link>
                         <NavBar />
                         <Button
@@ -22,7 +22,7 @@ const Header = () => {
                             link="/"
                             className="btn primary_btn"
                         />
-                        <ThemeSwitch className='asd' />
+                        <ThemeSwitch />
                     </div>
                 </div>
             </header >
