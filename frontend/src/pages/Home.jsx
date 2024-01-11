@@ -8,6 +8,8 @@ export default function Home() {
          <SingleBlog />
          <BlogsList 
             grid="blogs_grid3"
+            fetch="http://localhost:1337/api/blogs?populate=*"
+            beginsFrom="1"
          />
          {/* <ul>
             <li>

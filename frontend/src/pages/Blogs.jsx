@@ -9,7 +9,9 @@ export default function Blogs() {
                <SectionTitle
                   h1="Blogs"
                />
-               <BlogsList />
+               <BlogsList
+                  fetch="http://localhost:1337/api/blogs?populate=*"
+               />
             </div>
          </section>
       </>

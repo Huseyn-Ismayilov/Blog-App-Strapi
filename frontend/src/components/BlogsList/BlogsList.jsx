@@ -1,10 +1,12 @@
 import useFetch from "../../hooks/useFetch";
 import './BlogsList.css'
 import ArticleCart from "../ArticleCart/ArticleCart";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 export default function BlogsList(props) {
    const { isLoading, error, data } = useFetch(
-      "http://localhost:1337/api/blogs?populate=*"
+      // "http://localhost:1337/api/blogs?populate=*"
+      props.fetch
    );
 
    if (isLoading) return;
@@ -12,8 +14,9 @@ export default function BlogsList(props) {
    return (
       <section className="blogs_list">
          <div className="container">
+            <SectionTitle h1={props.sectionH1} />
             <ul className={props.grid}>
-               {data.data.map((blog, index) => (
+               {data.data.slice(props.beginsFrom, props.ends).map((blog, index) => (
                   <li
                      key={index}
                      className="cart"
@@ -21,7 +24,6 @@ export default function BlogsList(props) {
                      <ArticleCart
                         image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.medium.url}`}
                         title={blog.attributes.title}
-
                         link={`/${blog.attributes.Slug}`}
                      />
                   </li>
