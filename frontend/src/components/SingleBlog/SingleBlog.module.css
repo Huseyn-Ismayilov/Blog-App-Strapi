@@ -4,7 +4,7 @@
     gap: 36px;
 }
 .single_blog {
-    margin: 30px 0;
+    padding: 30px 0;
 }
 .singleCart > * {
     width: 50%;

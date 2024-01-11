@@ -1,16 +1,20 @@
-import { useParams } from "react-router-dom"
-import BlogsList from "../components/BlogsList/BlogsList"
+import { useParams } from 'react-router-dom'
+import BlogsList from '../components/BlogsList/BlogsList';
 
 export default function Category() {
    const { slug } = useParams()
+   const capitalizeText = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+   // console.log(data);
+   // console.log(slug);
+
    return (
-      <section className="category section_container">
-         <div className="container">
-            <BlogsList
-               sectionH1={slug}
-               fetch={`http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=${slug}&populate=*`}
-           />
-         </div>
-      </section>
+      <>
+         <BlogsList
+            fetch={`http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=${slug}&populate=*`}
+            titleH1={capitalizeText(slug)}
+            className="section_container"
+         />
+      </>
    )
 }
