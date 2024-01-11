@@ -5,7 +5,6 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 
 export default function BlogsList(props) {
    const { isLoading, error, data } = useFetch(
-      // "http://localhost:1337/api/blogs?populate=*"
       props.fetch
    );
 
