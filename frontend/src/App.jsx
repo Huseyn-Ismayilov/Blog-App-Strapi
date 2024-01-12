@@ -1,5 +1,5 @@
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Routes,
     Route
 } from 'react-router-dom'
@@ -9,28 +9,25 @@ import './App.css'
 import Home from './pages/Home'
 import Blogs from './pages/Blogs'
 import BlogsDetails from './pages/BlogDetailsPage'
-import About from './pages/About'
-import Contact from './pages/Contact'
 import Category from './pages/Category'
+
 // Layout
-import Header from './layout/Header/Header'
-import Footer from './layout/Footer/Footer'
+import Layout from './layout/rootLayout'
 
 function App() {
 
     return (
-        <Router>
-            <Header/>
+        <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Home />}></Route>
-                <Route path='/blogs' element={<Blogs />}></Route>
-                <Route path='/:slug' element={<BlogsDetails />}></Route>
-                <Route path='/category/:slug' element={<Category />}></Route>
-                <Route path='/about' element={<About />}></Route>
-                <Route path='/contact' element={<Contact />}></Route>
+                <Route element={<Layout />}>
+                    <Route path='/' element={<Home />}></Route>
+                    <Route path='/blogs' element={<Blogs />}></Route>
+                    <Route path='/:slug' element={<BlogsDetails />}></Route>
+                    <Route path='/category/:slug' element={<Category />}></Route>
+                </Route>
+
             </Routes>
-            <Footer />
-        </Router>
+        </BrowserRouter>
     )
 }
 

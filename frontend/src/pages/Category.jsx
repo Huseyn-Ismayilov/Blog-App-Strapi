@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import BlogsList from '../components/BlogsList/BlogsList';
 
 export default function Category() {
    const { slug } = useParams()
-   const capitalizeText = str => str.charAt(0).toUpperCase() + str.slice(1);
+   useEffect(() => {
+      // Burada içeriği değiştirmek veya başka bir işlem yapmak istediğiniz kodları ekleyebilirsiniz.
+      console.log(`Yeni kategori: ${slug}`);
+   }, [slug]);
 
+   const capitalizeText = str => str.charAt(0).toUpperCase() + str.slice(1);
    // console.log(data);
    // console.log(slug);
 

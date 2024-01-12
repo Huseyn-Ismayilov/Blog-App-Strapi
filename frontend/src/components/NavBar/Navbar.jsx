@@ -3,10 +3,7 @@ import { NavLink } from 'react-router-dom'
 export default function NavBar() {
     const menuLinks = [
         { text: "Home", to: "/" },
-        { text: "Tech", to: "/category/tech" },
         { text: "Blogs", to: "/blogs" },
-        { text: "Contact", to: "/contact" },
-        { text: "About", to: "/about" },
     ]
     return (
         <nav className="navBar">

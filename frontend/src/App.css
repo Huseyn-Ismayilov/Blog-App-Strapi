@@ -2,12 +2,14 @@
 
 html[data-theme="dark"] {
   --text-color: white;
+  --secondary-color: #6a02d5;
   --bg-color: #1d1d1d;
-  --border-color: #ffffff30;
+  --border-color: #ffffff1a;
 }
 
 html[data-theme="light"] {
   --text-color: #111111;
+  --secondary-color: #6a02d5;
   --bg-color: white;
   --border-color: #00000014;
 }
