@@ -4,10 +4,6 @@ import BlogsList from '../components/BlogsList/BlogsList';
 
 export default function Category() {
    const { slug } = useParams()
-   useEffect(() => {
-      // Burada içeriği değiştirmek veya başka bir işlem yapmak istediğiniz kodları ekleyebilirsiniz.
-      console.log(`Yeni kategori: ${slug}`);
-   }, [slug]);
 
    const capitalizeText = str => str.charAt(0).toUpperCase() + str.slice(1);
    // console.log(data);
