@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import useFetch from "../../hooks/useFetch";
-
+import Markdown from 'markdown-to-jsx'
 
 export default function BlogDetails() {
     const { slug } = useParams()
@@ -29,7 +29,7 @@ export default function BlogDetails() {
             </div>
             <div className="container">
                 <div className="details">
-                    <p>{data.data[0].attributes.content}</p>
+                    <p><Markdown>{data.data[0].attributes.content}</Markdown></p>
                 </div>
             </div>
 

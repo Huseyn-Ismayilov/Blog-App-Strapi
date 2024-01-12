@@ -10,6 +10,7 @@ export default function Home() {
             grid="blogs_grid3"
             className="section_container"
             beginsFrom="1"
+            titleH1="Latest Blogs"
          />
       </>
    );

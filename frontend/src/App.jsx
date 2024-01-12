@@ -12,7 +12,7 @@ import BlogsDetails from './pages/BlogDetailsPage'
 import Category from './pages/Category'
 
 // Layout
-import Layout from './layout/rootLayout'
+import Layout from './layout/Layout'
 
 function App() {
 
