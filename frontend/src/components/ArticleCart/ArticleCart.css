@@ -30,12 +30,13 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 .ArticleCart .category_tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 16px;
 }
 .ArticleCart .desc {
     font-size: 14px;
@@ -45,7 +46,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     opacity: .7;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 .ArticleCart.single .desc {
     -webkit-line-clamp: 4
@@ -62,4 +63,25 @@
 }
 .ArticleCart .category_tags a:hover {
     background-color: var(--border-color);
+}
+.ArticleCart .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.ArticleCart .author span {
+    display: block;
+    font-size: 13px;
+    opacity: .7;
+}
+.ArticleCart .author .photo {
+    width: 40px;
+    flex-shrink: 0;
+}
+.ArticleCart .author .photo img {
+    width: 100%;
+    border-radius: 50%;
+}
+.ArticleCart .author .username {
+    margin-bottom: 2px;
 }

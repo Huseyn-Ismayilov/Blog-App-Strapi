@@ -5,7 +5,7 @@ import ArticleCart from "../ArticleCart/ArticleCart";
 
 export default function SingleArticle() {
    const { isLoading, error, data } = useFetch(
-      "http://localhost:1337/api/blogs?populate=*"
+      "http://localhost:1337/api/blogs?populate=author.photo,categories,image"
    );
 
    if (isLoading) return;
@@ -31,7 +31,9 @@ export default function SingleArticle() {
                         </li>
                      ))
                   }
-                  
+                  authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.url}`}
+                  authorUsername={blog.attributes.author.data.attributes.fullname}
+                  authorNickname={blog.attributes.author.data.attributes.nickname}
                />
             ))}
          </div>

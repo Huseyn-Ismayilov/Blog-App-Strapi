@@ -5,12 +5,12 @@ import ArticleCart from "../ArticleCart/ArticleCart";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 export default function BlogsList(props) {
-   const { isLoading, error, data } = useFetch(
-      props.fetch
-   );
-   // console.log(data.data[0].attributes.categories.data[0].id);
+   const { isLoading, error, data } = useFetch(props.fetch);
    if (isLoading) return;
    if (error) return;
+
+   // console.log(data.data[0].attributes.author.data.attributes);
+   // console.log(data.data[0].attributes.categories.data[0].id);
 
    return (
       <section className={`blogs_list ${props.className}`}>
@@ -36,6 +36,9 @@ export default function BlogsList(props) {
                               </li>
                            ))
                         }
+                        authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.url}`}
+                        authorUsername={blog.attributes.author.data.attributes.fullname}
+                        authorNickname={blog.attributes.author.data.attributes.nickname}
                      />
                   </li>
                ))}

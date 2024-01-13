@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom"
 import useFetch from "../../hooks/useFetch";
 import Markdown from 'markdown-to-jsx'
 import './BlogDetails.css'
-import BlogsList from "../BlogsList/BlogsList";
 
 export default function BlogDetails() {
     const { slug } = useParams()
@@ -38,13 +37,7 @@ export default function BlogDetails() {
                     </div>
                 </div>
             </div>
-            <BlogsList
-                fetch="http://localhost:1337/api/blogs?populate=*"
-                grid="blogs_grid3"
-                className="section_container"
-                beginsFrom="1"
-                titleH1="Latest Blogs"
-            />
+
         </>
 
 

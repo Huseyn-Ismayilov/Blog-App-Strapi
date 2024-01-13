@@ -12,7 +12,7 @@ export default function Category() {
    return (
       <>
          <BlogsList
-            fetch={`http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=${slug}&populate=*`}
+            fetch={`http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=${slug}&populate=author.photo,categories,image`}
             titleH1={capitalizeText(slug)}
             className="section_container"
          />

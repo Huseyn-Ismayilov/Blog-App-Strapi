@@ -20,7 +20,6 @@ export default function ThemeSwitch(props) {
     return (
         <button
             onClick={handleClick}
-            data-theme={theme}
             className="theme_switch"
         >
             {

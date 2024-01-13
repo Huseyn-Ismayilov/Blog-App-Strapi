@@ -6,7 +6,6 @@ export default function ArticleCart(props) {
    return (
       <div
          className={`ArticleCart ${props.className}`}
-         key={props.key}
       >
          <Link
             to={props.link}
@@ -29,6 +28,15 @@ export default function ArticleCart(props) {
             <ul className="category_tags">
                {props.tags}
             </ul>
+            <div className="author">
+               <div className="photo">
+                  <img src={props.authorImage} alt="" />
+               </div>
+               <div>
+                  <span className="username">{props.authorUsername}</span>
+                  <span className="nickname">@{props.authorNickname}</span>
+               </div>
+            </div>
          </div>
 
       </div>
