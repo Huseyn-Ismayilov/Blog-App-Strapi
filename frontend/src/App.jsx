@@ -25,7 +25,6 @@ function App() {
                     <Route path='/:slug' element={<BlogsDetails />}></Route>
                     <Route path='/category/:slug' element={<Category />}></Route>
                 </Route>
-
             </Routes>
         </BrowserRouter>
     )

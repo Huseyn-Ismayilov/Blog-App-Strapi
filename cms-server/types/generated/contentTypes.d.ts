@@ -362,6 +362,44 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAuthorAuthor extends Schema.CollectionType {
+  collectionName: 'authors';
+  info: {
+    singularName: 'author';
+    pluralName: 'authors';
+    displayName: 'Author';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nickname: Attribute.String & Attribute.Required;
+    fullname: Attribute.String & Attribute.Required;
+    photo: Attribute.Media & Attribute.Required;
+    blogs: Attribute.Relation<
+      'api::author.author',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::author.author',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::author.author',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -379,15 +417,16 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     image: Attribute.Media & Attribute.Required;
     date: Attribute.Date;
     Slug: Attribute.UID<'api::blog.blog', 'title'> & Attribute.Required;
-    users: Attribute.Relation<
-      'api::blog.blog',
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
     categories: Attribute.Relation<
       'api::blog.blog',
       'manyToMany',
       'api::category.category'
+    >;
+    previewText: Attribute.String & Attribute.Required;
+    author: Attribute.Relation<
+      'api::blog.blog',
+      'manyToOne',
+      'api::author.author'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -783,12 +822,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    Photo: Attribute.Media;
-    blog: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToOne',
-      'api::blog.blog'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -860,6 +893,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'plugin::upload.file': PluginUploadFile;

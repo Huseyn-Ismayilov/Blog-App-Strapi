@@ -5,7 +5,7 @@ export default function ArticleCart(props) {
 
    return (
       <div
-         className="ArticleCart"
+         className={`ArticleCart ${props.className}`}
          key={props.key}
       >
          <Link
@@ -23,13 +23,18 @@ export default function ArticleCart(props) {
             >
                <h3 className="title">{props.title}</h3>
             </Link>
+            <p className="desc">
+               {props.desc}
+            </p>
             <ul className="category_tags">
-               <li>
-                  <Link>{props.tag}</Link>
-               </li>
+               {props.tags}
             </ul>
          </div>
 
       </div>
    )
+}
+
+ArticleCart.defaultProps = {
+   className: ""
 }

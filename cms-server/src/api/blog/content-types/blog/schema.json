@@ -39,16 +39,20 @@
       "targetField": "title",
       "required": true
     },
-    "users": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "blog"
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
+      "inversedBy": "blogs"
+    },
+    "previewText": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
       "inversedBy": "blogs"
     }
   }

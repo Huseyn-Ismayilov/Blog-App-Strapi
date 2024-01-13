@@ -1,38 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
 html[data-theme="dark"] {
-  --text-color: white;
-  --secondary-color: #6a02d5;
-  --bg-color: #1d1d1d;
-  --border-color: #ffffff1a;
+    --text-color: white;
+    --secondary-color: #6a02d5;
+    --bg-color: #1d1d1d;
+    --border-color: #ffffff1a;
 }
 
 html[data-theme="light"] {
-  --text-color: #111111;
-  --secondary-color: #6a02d5;
-  --bg-color: white;
-  --border-color: #00000014;
+    --text-color: #111111;
+    --secondary-color: #6a02d5;
+    --bg-color: white;
+    --border-color: #00000014;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg-color);
+    font-family: "Noto Sans", sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .wrapper {
@@ -54,8 +55,7 @@ button {
 a,
 button {
     color: currentColor;
-  transition: 0s;
-
+    transition: 0s;
 }
 .products {
     display: grid;
@@ -65,45 +65,6 @@ button {
 
 .products img {
     width: 100%;
-}
-
-.productDetails .image {
-    width: 100%;
-    position: relative;
-    margin-bottom: 36px;
-}
-.productDetails .image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background-color: black;
-    opacity: .4;
-}
-.productDetails .image img {
-    width: 100%;
-    max-height: 60vh;
-    min-height: 400px;
-    object-fit: cover;
-}
-.productDetails .image .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    display: inline-block;
-    width: 100%;
-    transform: translateX(-50%) translateY(-50%);
-}
-.productDetails .image .title h1 {
-    line-height: 1.2;
-    text-align: center;
-    width: fit-content;
-    font-size: 64px;
-    color: white;
-}
-.productDetails .details {
-    text-align: left;
 }
 
 .btn {
@@ -118,7 +79,7 @@ button {
     color: var(--text-color);
 }
 .primary_btn:hover {
-    background-color: rgba(0, 0, 0, 0.062);
+    background-color: var(--border-color);
 }
 .secondary_btn {
     color: white;
@@ -133,5 +94,4 @@ button {
 
 .section_container {
     margin: 24px 0;
-
 }
