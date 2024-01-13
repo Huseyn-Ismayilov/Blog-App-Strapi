@@ -31,7 +31,7 @@ export default function SingleArticle() {
                         </li>
                      ))
                   }
-                  authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.url}`}
+                  authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.small.url}`}
                   authorUsername={blog.attributes.author.data.attributes.fullname}
                   authorNickname={blog.attributes.author.data.attributes.nickname}
                />
