@@ -16,7 +16,7 @@ export default function SingleArticle() {
          <div className="container">
             {data.data.slice(0, 1).map((blog, index) => (
                <ArticleCart
-                  image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.medium.url}`}
+                  image={`http://localhost:1337${blog.attributes.image.data[0].attributes.url}`}
                   title={blog.attributes.title}
                   link={`/${blog.attributes.Slug}`}
                   key={index}

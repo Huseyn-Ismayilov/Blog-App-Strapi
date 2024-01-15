@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './ArticleCart.css'
+import Author from "./Author/Author";
 
 export default function ArticleCart(props) {
 
@@ -28,15 +29,11 @@ export default function ArticleCart(props) {
             <ul className="category_tags">
                {props.tags}
             </ul>
-            <div className="author">
-               <div className="photo">
-                  <img src={props.authorImage} alt="" />
-               </div>
-               <div>
-                  <span className="username">{props.authorUsername}</span>
-                  <span className="nickname">@{props.authorNickname}</span>
-               </div>
-            </div>
+            <Author 
+               authorImage={props.authorImage}
+               authorUsername={props.authorUsername}
+               authorNickname={props.authorNickname}
+            />
          </div>
 
       </div>

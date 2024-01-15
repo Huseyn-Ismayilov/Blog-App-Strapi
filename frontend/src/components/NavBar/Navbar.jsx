@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 
-export default function NavBar() {
+export default function NavBar(props) {
     const menuLinks = [
         { text: "Home", to: "/" },
         { text: "Blogs", to: "/blogs" },
     ]
     return (
-        <nav className="navBar">
+        <nav className={`navBar ${props.className}`}>
             <ul>
                 {menuLinks.map((item, index) => (
                     <li key={index}>
@@ -18,7 +18,6 @@ export default function NavBar() {
                         </NavLink>
                     </li>
                 ))}
-
             </ul>
         </nav>
     )

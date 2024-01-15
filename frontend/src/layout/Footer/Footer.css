@@ -23,3 +23,19 @@
 .site_footer .right {
     text-align: right;
 }
+
+@media (max-width: 768px) {
+    .site_footer .left,
+    .site_footer .right {
+        width: 100%;
+        text-align: center !important;
+        display: inline-block;
+    } 
+    .site_footer .logo {
+        display: inline-block;
+    }
+    .site_footer .foot_main .wrapper {
+        gap: 8px;
+        justify-content: center;
+    }
+}

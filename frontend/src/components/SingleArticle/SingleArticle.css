@@ -1,16 +1,14 @@
 .single_article {
     display: flex;
     align-items: center;
-    gap: 36px;
 }
 .single_article {
     margin: 30px 0;
 }
 .single_article .ArticleCart {
     display: flex;
-    gap: 30px;
 }
-.single_article .ArticleCart  > * {
+.single_article .ArticleCart > * {
     width: 50%;
 }
 
@@ -19,7 +17,9 @@
     border-radius: 4px;
 }
 
-.single_article .title {
-    font-size: 36px;
-    line-height: 1.3;
+@media (min-width: 1024px) {
+    .single_article .title {
+        font-size: 36px;
+        line-height: 1.3;
+    }
 }
