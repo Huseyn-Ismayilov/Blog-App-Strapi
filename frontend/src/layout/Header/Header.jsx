@@ -18,7 +18,7 @@ const Header = () => {
                         </Link>
                         <NavBar />
                         <Button
-                            text="Get Started"
+                            text="Subcribe"
                             link="/"
                             className="btn primary_btn"
                         />

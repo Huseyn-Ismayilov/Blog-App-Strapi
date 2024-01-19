@@ -11,11 +11,14 @@ export default function BlogDetails() {
     const { isLoading, error, data, setUrl } = useFetch();
 
     useEffect(() => {
-      setUrl(`http://localhost:1337/api/blogs?filters[$and][0][Slug][$eq]=${slug}&populate=author.photo,categories,image`);
+        setUrl(`http://localhost:1337/api/blogs?filters[$and][0][Slug][$eq]=${slug}&populate=author.photo,categories,image`);
     }, [slug, setUrl]);
 
     if (isLoading) return;
     if (error) return;
+
+    // console.log(data.data[0].attributes.author.data.attributes.photo.data.attributes.url);
+    // console.log(data.data[0].attributes.image.data[0].attributes.url);
 
     return (
         <>
@@ -30,7 +33,7 @@ export default function BlogDetails() {
                                 <p>{data.data[0].attributes.previewText}</p>
                             </div>
                             <Author
-                                authorImage={`http://localhost:1337${data.data[0].attributes.author.data.attributes.photo.data.attributes.formats.small.url}`}
+                                authorImage={`http://localhost:1337${data.data[0].attributes.author.data.attributes.photo.data.attributes.url}`}
                                 authorUsername={data.data[0].attributes.author.data.attributes.fullname}
                                 authorNickname={data.data[0].attributes.author.data.attributes.nickname}
                             />

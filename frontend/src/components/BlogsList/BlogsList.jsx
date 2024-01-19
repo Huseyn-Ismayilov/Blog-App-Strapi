@@ -1,15 +1,15 @@
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
-import './BlogsList.css'
 import ArticleCart from "../ArticleCart/ArticleCart";
 import SectionTitle from "../SectionTitle/SectionTitle";
-
+import './BlogsList.css'
 export default function BlogsList(props) {
    const { isLoading, error, data } = useFetch(props.fetch);
    if (isLoading) return;
    if (error) return;
 
    // console.log(data.data[0].attributes.author.data.attributes);
+   // console.log(data.data[0].attributes.author.data.attributes.photo.data.attributes.formats.thumbnail.url);
    // console.log(data.data[0].attributes.categories.data[0].id);
 
    return (
@@ -23,7 +23,7 @@ export default function BlogsList(props) {
                      className="cart"
                   >
                      <ArticleCart
-                        image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.medium.url}`}
+                        image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.small.url}`}
                         title={blog.attributes.title}
                         link={`/${blog.attributes.Slug}`}
                         desc={blog.attributes.previewText}
@@ -36,7 +36,7 @@ export default function BlogsList(props) {
                               </li>
                            ))
                         }
-                        authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.small.url}`}
+                        authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.thumbnail.url}`}
                         authorUsername={blog.attributes.author.data.attributes.fullname}
                         authorNickname={blog.attributes.author.data.attributes.nickname}
                      />

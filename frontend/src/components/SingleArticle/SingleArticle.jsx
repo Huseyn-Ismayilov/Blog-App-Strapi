@@ -16,7 +16,7 @@ export default function SingleArticle() {
          <div className="container">
             {data.data.slice(0, 1).map((blog, index) => (
                <ArticleCart
-                  image={`http://localhost:1337${blog.attributes.image.data[0].attributes.url}`}
+                  image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.small.url}`}
                   title={blog.attributes.title}
                   link={`/${blog.attributes.Slug}`}
                   key={index}
@@ -31,7 +31,7 @@ export default function SingleArticle() {
                         </li>
                      ))
                   }
-                  authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.small.url}`}
+                  authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.thumbnail.url}`}
                   authorUsername={blog.attributes.author.data.attributes.fullname}
                   authorNickname={blog.attributes.author.data.attributes.nickname}
                />

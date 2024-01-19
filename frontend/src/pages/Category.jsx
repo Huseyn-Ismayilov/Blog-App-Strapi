@@ -10,16 +10,15 @@ export default function Category(props) {
    const { isLoading, error, data, setUrl } = useFetch();
 
    useEffect(() => {
-      // const apiUrl = `http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=${slug}&populate=author.photo,categories,image`
       setUrl(`http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=${slug}&populate=author.photo,categories,image`);
-      // console.log(apiUrl);
    }, [slug, setUrl]);
+
    if (isLoading) return;
    if (error) return;
 
    const capitalizeText = str => str.charAt(0).toUpperCase() + str.slice(1);
    console.log(data);
-   // console.log(slug);
+   console.log(slug);
 
    return (
       <>
@@ -33,7 +32,7 @@ export default function Category(props) {
                         className="cart"
                      >
                         <ArticleCart
-                           image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.medium.url}`}
+                          image={`http://localhost:1337${blog.attributes.image.data[0].attributes.formats.small.url}`}
                            title={blog.attributes.title}
                            link={`/${blog.attributes.Slug}`}
                            desc={blog.attributes.previewText}
@@ -46,7 +45,7 @@ export default function Category(props) {
                                  </li>
                               ))
                            }
-                           authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.small.url}`}
+                           authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.thumbnail.url}`}
                            authorUsername={blog.attributes.author.data.attributes.fullname}
                            authorNickname={blog.attributes.author.data.attributes.nickname}
                         />

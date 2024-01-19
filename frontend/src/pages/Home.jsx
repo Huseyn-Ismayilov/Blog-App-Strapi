@@ -8,7 +8,7 @@ export default function Home() {
          <BlogsList
             fetch="http://localhost:1337/api/blogs?populate=author.photo,categories,image"
             className="section_container"
-            beginsFrom="1"
+            beginsFrom="0"
             Ends="5"
             titleH1="Latest Blogs"
          />
@@ -18,13 +18,6 @@ export default function Home() {
             beginsFrom="0"
             Ends="4"
             titleH1="Science"
-         />
-           <BlogsList
-            fetch="http://localhost:1337/api/blogs?filters[$and][0][categories][Slug][$eq]=programming&populate=author.photo,categories,image"
-            className="section_container"
-            beginsFrom="0"
-            Ends="4"
-            titleH1="Programming"
          />
       </>
    );
