@@ -7,9 +7,10 @@ export default function BlogDetailsPage() {
             <BlogDetails />
             <BlogsList
                 fetch="http://localhost:1337/api/blogs?populate=author.photo,categories,image"
-                className="section_container"
+                className="section_container latestBlogs"
                 beginsFrom="0"
                 Ends="4"
+                grid="blogs_grid3"
                 titleH1="Latest Blogs"
             />
         </>

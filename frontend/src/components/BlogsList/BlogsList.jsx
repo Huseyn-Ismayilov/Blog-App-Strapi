@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ArticleCart from "../ArticleCart/ArticleCart";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import './BlogsList.css'
+import formatDate from "../../utils/formatDate";
 export default function BlogsList(props) {
    const { isLoading, error, data } = useFetch(props.fetch);
    if (isLoading) return;
@@ -36,6 +37,7 @@ export default function BlogsList(props) {
                               </li>
                            ))
                         }
+                        date={formatDate(blog.attributes.date)}
                         authorImage={`http://localhost:1337${blog.attributes.author.data.attributes.photo.data.attributes.formats.thumbnail.url}`}
                         authorUsername={blog.attributes.author.data.attributes.fullname}
                         authorNickname={blog.attributes.author.data.attributes.nickname}

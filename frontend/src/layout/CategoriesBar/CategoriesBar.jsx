@@ -12,6 +12,12 @@ export default function CategoriesBar() {
         <div className="categories_bar">
             <div className="container">
                 <ul className="menu">
+                    <li>
+                        <NavLink
+                            to='/blogs'
+                            className='nav_link'
+                        >All Blogs</NavLink>
+                    </li>
                     {data.data.map((link, index) => (
                         <li
                             key={index}

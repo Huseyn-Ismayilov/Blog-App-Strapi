@@ -32,7 +32,8 @@
       ]
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "Slug": {
       "type": "uid",

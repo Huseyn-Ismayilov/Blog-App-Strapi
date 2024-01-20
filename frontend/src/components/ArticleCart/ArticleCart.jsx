@@ -28,7 +28,8 @@ export default function ArticleCart(props) {
             <ul className="category_tags">
                {props.tags}
             </ul>
-            <Author 
+            <div className="date">{props.date}</div>
+            <Author
                authorImage={props.authorImage}
                authorUsername={props.authorUsername}
                authorNickname={props.authorNickname}

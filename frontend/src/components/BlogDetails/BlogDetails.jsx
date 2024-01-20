@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import useFetch from "../../hooks/useFetch";
 import Markdown from 'markdown-to-jsx'
 import './BlogDetails.css'
@@ -7,7 +7,6 @@ import Author from "../ArticleCart/Author/Author";
 
 export default function BlogDetails() {
     const { slug } = useParams()
-
     const { isLoading, error, data, setUrl } = useFetch();
 
     useEffect(() => {
